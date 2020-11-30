@@ -1,4 +1,4 @@
-.todo--completed {
+.todo--completed .todo__text {
   text-decoration: line-through;
   color: #888;
 }

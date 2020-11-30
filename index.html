@@ -44,17 +44,17 @@
   <template id="todo-template">
     <li class="todos__item todo list-group-item d-flex align-items-start js-todo">
       <div class="custom-control custom-checkbox custom-control-inline">
-        <input class="custom-control-input js-todo__checkbox" type="checkbox" id="todo1checkbox">
-        <label class="todo__label custom-control-label" for="todo1checkbox"></label>
+        <input class="custom-control-input js-todo__checkbox" type="checkbox" id="" data-todo-id="">
+        <label class="todo__label custom-control-label" for=""></label>
       </div>
-      <span class="todo__text flex-grow-1 mr-2 mr-md-4">Lorem ipsum dolor</span>
-      <button class="todo__delete-btn btn btn-outline-danger btn-sm js-todo__delete-btn" type="button" aria-label="Delete todo">&times;</button>
+      <span class="todo__text flex-grow-1 mr-2 mr-md-4"></span>
+      <button class="todo__delete-btn btn btn-outline-danger btn-sm js-todo__delete-btn" data-todo-id="" type="button" aria-label="Delete todo">&times;</button>
     </li>
   </template>
 
-
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/utils.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
