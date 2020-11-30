@@ -33,21 +33,24 @@
           <section>
             <h2 class="sr-only">Todos</h2>
 
-            <ul class="todos list-group">
-              <li class="todos__item todo todo--completed list-group-item d-flex align-items-start js-todo">
-                <div class="custom-control custom-checkbox custom-control-inline">
-                  <input class="custom-control-input js-todo__checkbox" type="checkbox" id="todo1checkbox">
-                  <label class="todo__label custom-control-label" for="todo1checkbox"></label>
-                </div>
-                <span class="todo__text flex-grow-1 mr-2 mr-md-4">Lorem ipsum dolor</span>
-                <button class="todo__delete-btn btn btn-outline-danger btn-sm js-todo__delete-btn" type="button" aria-label="Delete todo">&times;</button>
-              </li>
-            </ul>
+            <ul class="todos list-group"></ul>
           </section>
         </div>
       </div>
     </div>
   </main>
+
+
+  <template id="todo-template">
+    <li class="todos__item todo list-group-item d-flex align-items-start js-todo">
+      <div class="custom-control custom-checkbox custom-control-inline">
+        <input class="custom-control-input js-todo__checkbox" type="checkbox" id="todo1checkbox">
+        <label class="todo__label custom-control-label" for="todo1checkbox"></label>
+      </div>
+      <span class="todo__text flex-grow-1 mr-2 mr-md-4">Lorem ipsum dolor</span>
+      <button class="todo__delete-btn btn btn-outline-danger btn-sm js-todo__delete-btn" type="button" aria-label="Delete todo">&times;</button>
+    </li>
+  </template>
 
 
   <script src="js/jquery-3.5.1.min.js"></script>
