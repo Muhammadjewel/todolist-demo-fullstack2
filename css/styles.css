@@ -1,0 +1,26 @@
+.todo--completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo__label::before,
+.todo__label::after {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .todo__delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .todo:hover .todo__delete-btn,
+  .todo__delete-btn:focus {
+    opacity: 1;
+  }
+}
