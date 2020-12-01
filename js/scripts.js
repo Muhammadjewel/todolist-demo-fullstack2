@@ -1,4 +1,4 @@
-var todolist = [];
+var todolist = JSON.parse(localStorage.getItem('todolist')) || [];
 var todoIdCounter = Number(localStorage.getItem('schetchik'));
 
 
