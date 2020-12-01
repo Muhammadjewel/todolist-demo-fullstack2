@@ -67,6 +67,15 @@ var removeTodo = function (todoId) {
   console.log(todolist);
 };
 
+var toggleCompleted = function (todoId) {
+  var todo = todolist.find(function (todo) {
+    return todo.id === todoId;
+  });
+
+  todo.completed = !todo.completed;
+  console.log(todolist);
+};
+
 
 var onElFormSubmit = function (evt) {
   evt.preventDefault();
@@ -92,6 +101,13 @@ var onElTodosClick = function (evt) {
     var todoId = Number(evt.target.dataset.todoId);
 
     removeTodo(todoId);
+    updateLocalTodolist();
+  } else if (evt.target.matches('.js-todo__checkbox')) {
+    var todoId = Number(evt.target.dataset.todoId);
+
+    evt.target.closest('.todo').classList.toggle('todo--completed');
+
+    toggleCompleted(todoId);
     updateLocalTodolist();
   }
 };
