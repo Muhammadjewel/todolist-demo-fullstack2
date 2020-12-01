@@ -14,6 +14,10 @@ var updateLocalCounter = function () {
   localStorage.setItem('schetchik', todoIdCounter);
 };
 
+var updateLocalTodolist = function () {
+  localStorage.setItem('todolist', JSON.stringify(todolist));
+};
+
 var addTodo = function (todoText) {
   todolist.push({
     text: todoText,
@@ -68,6 +72,8 @@ var onElFormSubmit = function (evt) {
   addTodo(todoText);
   clearTodoInput();
   renderTodoList(todolist);
+
+  updateLocalTodolist();
   updateLocalCounter();
 };
 
