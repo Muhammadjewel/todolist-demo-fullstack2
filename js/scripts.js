@@ -58,6 +58,15 @@ var clearTodoInput = function () {
   elTodoInput.value = '';
 };
 
+var removeTodo = function (todoId) {
+  var todoIndex = todolist.findIndex(function (todo) {
+    return todo.id === todoId;
+  });
+
+  todolist.splice(todoIndex, 1);
+  console.log(todolist);
+};
+
 
 var onElFormSubmit = function (evt) {
   evt.preventDefault();
@@ -77,6 +86,18 @@ var onElFormSubmit = function (evt) {
   updateLocalCounter();
 };
 
+var onElTodosClick = function (evt) {
+  if (evt.target.matches('.js-todo__delete-btn')) {
+    evt.target.closest('.todo').remove();
+    var todoId = Number(evt.target.dataset.todoId);
+
+    removeTodo(todoId);
+    updateLocalTodolist();
+  }
+};
+
+
 elTodoForm.addEventListener('submit', onElFormSubmit);
+elTodos.addEventListener('click', onElTodosClick);
 
 renderTodoList(todolist);
