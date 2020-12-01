@@ -10,8 +10,6 @@ var elTodos = $_('.todos');
 var elTodoTemplate = $_('#todo-template').content;
 
 
-// inputga ma'lumot kiritib, form submit qilinganda todolistga yangi obyekt qo'shiladi
-
 var updateLocalCounter = function () {
   localStorage.setItem('schetchik', todoIdCounter);
 };
@@ -52,6 +50,10 @@ var renderTodoList = function (todos) {
   elTodos.appendChild(elTodosFragment);
 };
 
+var clearTodoInput = function () {
+  elTodoInput.value = '';
+};
+
 
 var onElFormSubmit = function (evt) {
   evt.preventDefault();
@@ -64,6 +66,7 @@ var onElFormSubmit = function (evt) {
   }
 
   addTodo(todoText);
+  clearTodoInput();
   renderTodoList(todolist);
   updateLocalCounter();
 };
