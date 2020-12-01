@@ -72,3 +72,5 @@ var onElFormSubmit = function (evt) {
 };
 
 elTodoForm.addEventListener('submit', onElFormSubmit);
+
+renderTodoList(todolist);
